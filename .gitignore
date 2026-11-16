@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables — real secrets, never commit
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# .env.example is intentionally NOT listed here — it should be committed
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Logs
+*.log
+ai-server.log
+dev-server.log
+
+# Local SQLite database files
+prisma/dev.db
+prisma/dev.db-journal
+prisma/dev.db-shm
+prisma/dev.db-wal
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Local file uploads (private binary content — not for version control)
+public/uploads/
+storage/ebooks/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Misc build/cache
+.turbo/
+.cache/
+
+# Local database backups (contain user data — never commit)
+prisma/dev.db.backup-*
+prisma/*.backup-*
+*.db.backup*
+
+# Local launcher / helper scripts (machine-specific paths)
+jalankan-digilib.ps1
+
+# Developer debug scripts (local tooling only)
+scripts/debug-provider.ts
+scripts/inspect-db.ts
+
+# Internal audit reports (local documentation only)
+AUDIT_REPORT.md
+audit_report_opencode.md
+BROWSER_VERIFICATION_REPORT.md
+FINAL_AUDIT_REPORT.md
+PROJECT_AUDIT_REPORT.md

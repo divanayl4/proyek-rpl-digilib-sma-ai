@@ -1,0 +1,970 @@
+[
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa administrator?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Daftar pengguna DigiLib:\n\n- Andi (Administrator) — admin@sma.id — aktif"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa saja pengguna?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Daftar pengguna DigiLib:\n\n- Marza Bulan (Siswa) — marza@sma.id — 20260002 — kelas XII IPA 1 — aktif\n- Najla (Siswa) — najla@sma.id — 20260001 — kelas XII — aktif\n- Staf Tata Usaha (Staf) — staf@sma.id — STF001 — aktif\n- Siswa Rajin (Siswa) — siswa@sma.id — 2024001 — kelas XII IPA 1 — aktif\n- Guru (Guru) — guru@sma.id — NIP19850410201001 — aktif\n- Endi (Pustakawan) — pustakawan@sma.id — PTK001 — aktif\n- Andi (Administrator) — admin@sma.id — aktif"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Ada berapa pengguna?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Jumlah pengguna terdaftar di DigiLib: **7** pengguna."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa guru?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Daftar pengguna DigiLib:\n\n- Guru (Guru) — guru@sma.id — NIP19850410201001 — aktif"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa pengguna per role?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Jumlah pengguna terdaftar di DigiLib: **7** pengguna.\n\n- Administrator: 1\n- Pustakawan: 1\n- Guru: 1\n- Siswa: 3\n- Staf: 1"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Tampilkan semua siswa",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Daftar pengguna DigiLib:\n\n- Marza Bulan (Siswa) — marza@sma.id — 20260002 — kelas XII IPA 1 — aktif\n- Najla (Siswa) — najla@sma.id — 20260001 — kelas XII — aktif\n- Siswa Rajin (Siswa) — siswa@sma.id — 2024001 — kelas XII IPA 1 — aktif"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa saja siswa kelas XII IPA 1?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Daftar pengguna DigiLib:\n\n- Marza Bulan (Siswa) — marza@sma.id — 20260002 — kelas XII IPA 1 — aktif\n- Siswa Rajin (Siswa) — siswa@sma.id — 2024001 — kelas XII IPA 1 — aktif"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa jumlah buku?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Ada 2 judul buku."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Buku apa yang tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Apakah Bumi Manusia tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 1 judul buku untuk \"bumi manusia\":\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa stok Bumi Manusia?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Stok **Bumi Manusia** — Pramoedya Ananta Toer: tersedia 5 dari 5 eksemplar."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Buku sejarah ada?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, tidak ada buku sejarah yang ditemukan di katalog DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Kategori apa saja yang ada?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Jumlah judul buku fisik per kategori:\n\n- Buku Referensi: 0 judul\n- Buku Teks Pelajaran: 1 judul\n- Cerita Pendek: 0 judul\n- Ebook: 0 judul\n- Ensiklopedia: 0 judul\n- Fiksi: 1 judul\n- Modul: 0 judul\n- Nonfiksi: 0 judul\n- Novel: 0 judul\n- Pengetahuan Umum: 0 judul"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa buku per kategori?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Jumlah judul buku fisik per kategori:\n\n- Buku Referensi: 0 judul\n- Buku Teks Pelajaran: 1 judul\n- Cerita Pendek: 0 judul\n- Ebook: 0 judul\n- Ensiklopedia: 0 judul\n- Fiksi: 1 judul\n- Modul: 0 judul\n- Nonfiksi: 0 judul\n- Novel: 0 judul\n- Pengetahuan Umum: 0 judul"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa yang sedang meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Tidak ada buku fisik yang sedang dipinjam (belum dikembalikan) saat ini (waktu Asia/Jakarta)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa yang terlambat mengembalikan?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Tidak ada peminjaman yang sedang terlambat dikembalikan saat ini (waktu Asia/Jakarta)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa total denda?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Total denda yang tercatat: Rp166.000."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa yang mempunyai denda?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Denda yang tercatat:\n\n- Guru — Bumi Manusia: kerusakan (Rp50.000) — lunas\n- Marza Bulan — Fisika Dasar untuk SMA: keterlambatan 1 hari (Rp1.000) — lunas\n- Najla — Bumi Manusia: kerusakan (Rp50.000) — lunas\n- Najla — Fisika Dasar untuk SMA: kerusakan (Rp50.000) — lunas\n- Najla — Bumi Manusia: kerusakan (Rp15.000) — lunas\n\nSemua denda tersebut sudah lunas."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Total denda yang belum dibayar",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Total denda yang belum dibayar: Rp0."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Tampilkan transaksi peminjaman terbaru",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": {
+          "provider": "NVIDIA",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "fallbackUsed": true,
+          "primaryProvider": "OPENROUTER",
+          "primaryModel": "openai/gpt-4o"
+        },
+        "answer": "Berikut adalah transaksi peminjaman terbaru di DigiLib (12 dari 20 total):\n\n1. **Bumi Manusia** – Pramoedya Ananta Toer\n   - Status: Sudah dikembalikan\n   - Dipinjam: 5 Nov 2026, 09:09 WIB\n   - Jatuh tempo: 12 Nov 2026, 09:09 WIB\n   - Dikembalikan: 8 Nov 2026, 10:03 WIB\n   - Peminjam: Marza Bulan (Siswa, XII IPA 1)\n\n2. **Bumi Manusia** – Pramoedya Ananta Toer\n   - Status: Sudah dikembalikan\n   - Dipinjam: 23 Okt 2026, 07:58 WIB\n   - Jatuh tempo: 30 Okt 2026, 07:58 WIB\n   - Dikembalikan: 29 Okt 2026, 19:26 WIB\n   - Peminjam: Marza Bulan (Siswa, XII IPA 1)\n\n3. **Fisika Dasar untuk SMA** – Yohanes Surya\n   - Status: Sudah dikembalikan\n   - Dipinjam: 22 Okt 2026, 08:50 WIB\n   - Jatuh tempo: 29 Okt 2026, 08:50 WIB\n   - Dikembalikan: 29 Okt 2026, 19:25 WIB\n   - Peminjam: Marza Bulan (Siswa, XII IPA 1)\n\n4. **Bumi Manusia** – Pramoedya Ananta Toer\n   - Status: Sudah dikembalikan\n   - Dipinjam: 20 Okt 2026, 18:22 WIB\n   - Jatuh tempo: 27 Okt 2026, 18:22 WIB\n   - Dikembalikan: 20 Okt 2026, 18:31 WIB\n   - Peminjam: Najla (Siswa, XII)\n\n5. **Fisika Dasar untuk SMA** – Yohanes Surya\n   - Status: Sudah dikembalikan\n   - Dipinjam: 18 Okt 2026, 13:48 WIB\n   - Jatuh tempo: 25 Okt 2026, 13:48 WIB\n   - Dikembalikan: 18 Okt 2026, 13:48 WIB\n   - Peminjam: Najla (Siswa, XII)\n\n6. **Bumi Manusia** – Pramoedya Ananta Toer\n   - Status: Sudah dikembalikan\n   - Dipinjam: 18 Okt 2026, 13:46 WIB\n   - Jatuh tempo: 25 Okt 2026, 13:46 WIB\n   - Dikembalikan: 18 Okt 2026, 13:46 WIB\n   - Peminjam: Najla (Siswa, XII)\n\n7. **Fisika Dasar untuk SMA** – Yohanes Surya\n   - Status: **Ditolak** (terlambat belum dikembalikan)\n   - Dipinjam: 18 Okt 2026, 12:33 WIB\n   - Jatuh tempo: 25 Okt 2026, 12:33 WIB\n   - Peminjam: Najla (Siswa, XII)\n   - Keterlambatan: 21 hari\n\n8. **Fisika Dasar untuk SMA** – Yohanes Surya\n   - Status: **Ditolak** (terlambat belum dikembalikan)\n   - Dipinjam: 18 Okt 2026, 12:04 WIB\n   - Jatuh tempo: 25 Okt 2026, 12:04 WIB\n   - Peminjam: Najla (Siswa, XII)\n   - Keterlambatan: 21 hari\n\n9. **Bumi Manusia** – Pramoedya Ananta Toer\n   - Status: Sudah dikembalikan\n   - Dipinjam: 18 Okt 2026, 12:07 WIB\n   - Jatuh tempo: 25 Okt 2026, 12:07 WIB\n   - Dikembalikan: 18 Okt 2026, 12:07 WIB\n   - Peminjam: Najla (Siswa, XII)\n\n10. **Fisika Dasar untuk SMA** – Yohanes Surya\n    - Status: **Ditolak** (terlambat belum dikembalikan)\n    - Dipinjam: 18 Okt 2026, 12:04 WIB\n    - Jatuh tempo: 25 Okt"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa transaksi peminjaman bulan Oktober?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Total transaksi pada Oktober 2026: 32 transaksi peminjaman (18 buku fisik + 14 ebook)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa yang paling sering meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Peminjam paling aktif (berdasarkan jumlah transaksi peminjaman buku yang tercatat):\n\n1. Najla (Siswa) — 7 peminjaman\n2. Siswa Rajin (Siswa) — 5 peminjaman\n3. Marza Bulan (Siswa) — 3 peminjaman\n4. Guru (Guru) — 2 peminjaman\n\nCatatan: peringkat dihitung dari transaksi peminjaman buku di database (waktu Asia/Jakarta); pengajuan yang belum disetujui atau ditolak tidak dihitung."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Aktivitas membaca ebook",
+        "intent": "MY_HISTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Aktivitas membaca ebook terbaru:\n\n- Marza Bulan (Siswa) — \"Kumpulan Cerpen Singkat (Ebook)\" — dibuka 2026-11-08 10:02 WIB, aktivitas terakhir 2026-11-08 10:02 WIB (Tidak aktif)\n- Marza Bulan (Siswa) — \"Kumpulan Cerpen Singkat (Ebook)\" — dibuka 2026-10-29 23:11 WIB, aktivitas terakhir 2026-10-29 23:11 WIB (Tidak aktif)\n- Marza Bulan (Siswa) — \"Kumpulan Cerpen Singkat (Ebook)\" — dibuka 2026-10-29 21:57 WIB, aktivitas terakhir 2026-10-29 21:57 WIB (Tidak aktif)\n- Marza Bulan (Siswa) — \"Kumpulan Cerpen Singkat (Ebook)\" — dibuka 2026-10-29 19:43 WIB, aktivitas terakhir 2026-10-29 20:11 WIB (Tidak aktif)\n- Marza Bulan (Siswa) — \"Fisika Dasar untuk SMA (Ebook)\" — dibuka 2026-10-24 15:06 WIB, aktivitas terakhir 2026-10-24 15:06 WIB (Tidak aktif)\n- Marza Bulan (Siswa) — \"Fisika Dasar untuk SMA (Ebook)\" — dibuka 2026-10-24 14:23 WIB, aktivitas terakhir 2026-10-24 14:26 WIB (Tidak aktif)\n\nTotal 6 sesi.\n\nStatus “Aktivitas terbaru” hanya berarti ada sinyal aktivitas dalam 30 menit terakhir, bukan bukti membaca terus-menerus. Nomor halaman/progres tidak tersedia dari viewer PDF bawaan browser dan tidak dikarang."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Pengaturan sistem apa saja?",
+        "intent": "SYSTEM_SETTINGS",
+        "verified": true,
+        "ai": null,
+        "answer": "Saat ini hanya ada satu pengaturan sistem non-sensitif yang tersedia:\n\n- Tarif denda keterlambatan per hari (Rupiah): 1000"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa yang membuat akun terbaru?",
+        "intent": "USER_AUDIT",
+        "verified": true,
+        "ai": null,
+        "answer": "Riwayat audit pembuatan akun:\n\n1. Akun akun berperan Siswa didaftarkan sendiri oleh tidak tercatat — audit dicatat 2026-11-14 13:25 WIB. Waktu akun dibuat: tidak tersedia (audit tidak menyimpannya).\n2. Akun akun berperan Siswa didaftarkan sendiri oleh tidak tercatat — audit dicatat 2026-11-14 12:51 WIB. Waktu akun dibuat: tidak tersedia (audit tidak menyimpannya).\n3. Akun Marza Bulan (Siswa) didaftarkan sendiri oleh Marza Bulan (Siswa) — audit dicatat 2026-10-22 08:03 WIB. Waktu akun dibuat: 2026-10-22 08:03 WIB.\n4. Akun Najla (Siswa) didaftarkan sendiri oleh Najla (Siswa) — audit dicatat 2026-10-18 10:27 WIB. Waktu akun dibuat: 2026-10-18 10:27 WIB.\n\nWaktu ditampilkan dalam zona Asia/Jakarta (WIB)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Model AI apa yang digunakan?",
+        "intent": "CHITCHAT",
+        "verified": true,
+        "ai": null,
+        "answer": "AI yang sedang digunakan: OpenRouter (openai/gpt-4o)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Apa itu perpustakaan digital?",
+        "intent": "LEARNING",
+        "verified": false,
+        "ai": {
+          "provider": "NVIDIA",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "fallbackUsed": true,
+          "primaryProvider": "OPENROUTER",
+          "primaryModel": "openai/gpt-4o"
+        },
+        "answer": "Perpustakaan digital (Digital Library) adalah perpustakaan di mana koleksi buku, majalah, jurnal, dan sumber daya lain disimpan dalam format digital dan dapat diakses melalui perangkat elektronik seperti komputer, tablet, atau smartphone.\n\nBerikut adalah beberapa karakteristik utama perpustakaan digital:\n\n1. **Akses yang fleksibel**: Buku dan materi bisa diakses kapan saja dan di mana saja, asalkan ada koneksi internet (atau melalui aplikasi perpustakaan).\n2. **Carian cepat**: Pengguna bisa mencari judul, penulis, atau topik menggunakan fitur pencarian yang canggih.\n3. **Banyak format**: Termasuk buku fisik yang tercatat di sistem, ebook (baca online atau unduh), jurnal ilmiah, video, dan audio.\n4. **Simpan ruang**: Tidak butuhkan gudang fisik besar karena data disimpan digital.\n5. **Akses bersama**: Banyak orang bisa membaca satu judul secara bersamaan (tergantung lisensi), atau bisa dipinjam secara digital.\n\nDi konteks SMA/SMK, perpustakaan digital biasanya menyediakan buku pelajaran, buku referensi, buku peluang kerja (PKG), serta buku bacaan umum yang sesuai kurikulum.\n\nApakah Anda ingin mencari buku tertentu, cek ketersediaan, atau tahu cara meminjam di DigiLib? Saya bisa bantu."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa presiden Indonesia sekarang?",
+        "intent": "OUT_OF_SCOPE",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya hanya dapat membantu seputar perpustakaan DigiLib, rekomendasi buku, ebook, dan pertanyaan ringan mengenai mata pelajaran SMK."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "halo",
+        "intent": "CHITCHAT",
+        "verified": true,
+        "ai": null,
+        "answer": "Hai, Andi. Ada yang bisa saya bantu?"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Siapa nama saya?",
+        "intent": "MY_PROFILE",
+        "verified": true,
+        "ai": null,
+        "answer": "Anda terdaftar sebagai **Andi** (Administrator).\n- Nomor Identitas (NIS/NIP): belum tercatat di sistem.\n- Email: admin@sma.id"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa denda saya?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Administrator, Anda tidak memiliki denda pribadi yang tercatat. Denda pengguna lain dapat dipantau melalui menu Denda."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Pinjaman saya apa saja?",
+        "intent": "MY_LOANS",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Administrator, Anda tidak terdaftar sebagai peminjam sehingga tidak memiliki data peminjaman pribadi. Anda dapat memantau aktivitas peminjaman pengguna melalui menu Transaksi atau Laporan pada dasbor admin."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Siapa administrator?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat menampilkan daftar identitas pengguna. Saya hanya dapat menyebutkan jumlah pengguna secara agregat."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Berapa jumlah pengguna?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, rincian jumlah pengguna per peran hanya dapat dilihat oleh Administrator. Saya tidak dapat menampilkan informasi tersebut untuk peran Anda."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Tampilkan riwayat peminjaman Najla",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Berapa denda Najla?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, kamu hanya dapat melihat informasi denda milikmu sendiri, termasuk denda akibat keterlambatan maupun kerusakan buku. Saya tidak dapat menampilkan data denda seluruh siswa atau pengguna lain karena informasi tersebut dibatasi berdasarkan hak akses."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Berapa denda saya?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Pustakawan, Anda tidak memiliki denda pribadi yang tercatat. Denda pengguna lain dapat dipantau melalui menu Denda."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Pengaturan sistem apa saja?",
+        "intent": "SYSTEM_SETTINGS",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, pengaturan sistem hanya dapat dilihat oleh Administrator. Saya tidak dapat menampilkan informasi tersebut untuk peran Anda."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Siapa yang sedang meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Tidak ada buku fisik yang sedang dipinjam (belum dikembalikan) saat ini (waktu Asia/Jakarta)."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Aktivitas membaca ebook",
+        "intent": "MY_HISTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, data aktivitas membaca ebook seluruh pengguna hanya dapat dipantau oleh Administrator. Saya tidak dapat menampilkan sesi membaca, durasi, atau progres pengguna lain untuk peran Anda. Anda tetap dapat menanyakan aktivitas membaca ebook milik Anda sendiri."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Buku apa saja yang pernah saya pinjam?",
+        "intent": "MY_HISTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Riwayat peminjamanmu:\n\n- Bumi Manusia — dipinjam 16 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Bumi Manusia — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Dasar-Dasar Pemrograman (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) (ebook) — dipinjam 6 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) (ebook) — dipinjam 6 Oktober 2026 (sudah dikembalikan)\n- Bumi Manusia — dipinjam 2 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA — dipinjam 2 Oktober 2026 (sudah dikembalikan)\n- Bumi Manusia — dipinjam 18 September 2026 (sudah dikembalikan)"
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Buku yang sedang saya pinjam apa saja?",
+        "intent": "MY_LOANS",
+        "verified": true,
+        "ai": null,
+        "answer": "Saat ini kamu tidak memiliki peminjaman aktif."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Apakah saya punya denda?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Belum ada riwayat denda tercatat."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Riwayat ebook saya",
+        "intent": "MY_HISTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Riwayat ebook kamu:\n\n- Fisika Dasar untuk SMA (Ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Dasar-Dasar Pemrograman (Ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA (Ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) — dipinjam 6 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) — dipinjam 6 Oktober 2026 (sudah dikembalikan)"
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Aktivitas membaca saya",
+        "intent": "MY_LOANS",
+        "verified": true,
+        "ai": null,
+        "answer": "Belum ada aktivitas membaca ebook yang tercatat untuk akun Anda. Peminjaman atau masa akses ebook tidak otomatis dihitung sebagai aktivitas membaca."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Tampilkan riwayat peminjaman Najla",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Berapa denda Najla?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, kamu hanya dapat melihat informasi denda milikmu sendiri, termasuk denda akibat keterlambatan maupun kerusakan buku. Saya tidak dapat menampilkan data denda seluruh siswa atau pengguna lain karena informasi tersebut dibatasi berdasarkan hak akses."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Siapa yang sedang meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Berapa jumlah pengguna?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, rincian jumlah pengguna per peran hanya dapat dilihat oleh Administrator. Saya tidak dapat menampilkan informasi tersebut untuk peran Anda."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Siapa administrator?",
+        "intent": "USER_DIRECTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Tugas saya apa?",
+        "intent": "MY_CAPABILITIES",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Siswa di DigiLib, berikut tugas, hak, dan fitur yang tersedia untuk akun Anda:\n\n- Mencari dan melihat detail buku fisik maupun ebook melalui Katalog DigiLib.\n- Mengajukan peminjaman buku fisik (maksimal 3 buku, batas waktu 7 hari).\n- Meminjam dan membaca ebook langsung melalui pembaca PDF in-app (kuota 3 peminjaman ebook per minggu kalender, masa akses 7 hari).\n- Melacak progres membaca ebook (halaman terakhir dan persentase selesai) serta melanjutkan membaca secara otomatis.\n- Melihat informasi data pribadi: peminjaman aktif, riwayat peminjaman dan transaksi, tagihan denda keterlambatan/kerusakan, dan notifikasi akun.\n- Menggunakan DigiLib Assistant untuk mencari buku, mengecek ketersediaan koleksi, dan panduan perpustakaan.\n- Mengelola profil pribadi dan memverifikasi nomor WhatsApp untuk menerima notifikasi pengingat."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Tugas pustakawan apa?",
+        "intent": "OUT_OF_SCOPE",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, DigiLib Assistant hanya dapat menjelaskan tugas dan fitur yang sesuai dengan role akun Anda."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Model AI apa yang digunakan?",
+        "intent": "CHITCHAT",
+        "verified": true,
+        "ai": null,
+        "answer": "AI yang sedang digunakan: OpenRouter (openai/gpt-4o)."
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Siapa nama saya?",
+        "intent": "MY_PROFILE",
+        "verified": true,
+        "ai": null,
+        "answer": "Anda terdaftar sebagai **Siswa Rajin** (Siswa).\n- Kelas: XII IPA 1\n- Nomor Identitas (NIS/NIP): 2024001\n- Email: siswa@sma.id"
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Buku apa saja yang tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      }
+    ]
+  },
+  {
+    "role": "TEACHER",
+    "turns": [
+      {
+        "q": "Berapa denda saya?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Total denda yang pernah tercatat adalah Rp50.000."
+      }
+    ]
+  },
+  {
+    "role": "TEACHER",
+    "turns": [
+      {
+        "q": "Riwayat peminjaman saya",
+        "intent": "MY_HISTORY",
+        "verified": true,
+        "ai": null,
+        "answer": "Riwayat peminjamanmu:\n\n- Fisika Dasar untuk SMA — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Bumi Manusia — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Fisika Dasar untuk SMA (Ebook) (ebook) — dipinjam 15 Oktober 2026 (sudah dikembalikan)\n- Kumpulan Cerpen Singkat (Ebook) (ebook) — dipinjam 6 Oktober 2026 (sudah dikembalikan)"
+      }
+    ]
+  },
+  {
+    "role": "TEACHER",
+    "turns": [
+      {
+        "q": "Tampilkan denda seluruh siswa",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, kamu hanya dapat melihat informasi denda milikmu sendiri, termasuk denda akibat keterlambatan maupun kerusakan buku. Saya tidak dapat menampilkan data denda seluruh siswa atau pengguna lain karena informasi tersebut dibatasi berdasarkan hak akses."
+      }
+    ]
+  },
+  {
+    "role": "TEACHER",
+    "turns": [
+      {
+        "q": "Berapa pengguna per role?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, rincian jumlah pengguna per peran hanya dapat dilihat oleh Administrator. Saya tidak dapat menampilkan informasi tersebut untuk peran Anda."
+      }
+    ]
+  },
+  {
+    "role": "TEACHER",
+    "turns": [
+      {
+        "q": "Apa tugas guru?",
+        "intent": "MY_CAPABILITIES",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Guru di DigiLib, berikut tugas, hak, dan fitur yang tersedia untuk akun Anda:\n\n- Mencari dan melihat koleksi buku fisik maupun ebook melalui Katalog DigiLib.\n- Mengajukan peminjaman buku fisik untuk referensi pengajaran (kuota hingga 5 buku, batas waktu 14 hari).\n- Meminjam dan membaca ebook materi ajar melalui pembaca PDF in-app (kuota 3 peminjaman ebook per minggu kalender, masa akses 7 hari).\n- Mengakses menu Rekomendasi Buku untuk bahan ajar dan referensi materi kurikulum SMK.\n- Melihat informasi data pribadi: peminjaman aktif, riwayat transaksi, tagihan denda, dan notifikasi akun.\n- Menggunakan DigiLib Assistant untuk rekomendasi bahan ajar, informasi koleksi, dan panduan perpustakaan.\n- Mengelola profil pribadi dan memverifikasi nomor WhatsApp untuk menerima notifikasi."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Siapa nama saya?",
+        "intent": "MY_PROFILE",
+        "verified": true,
+        "ai": null,
+        "answer": "Anda terdaftar sebagai **Staf Tata Usaha** (STAFF).\n- Nomor Identitas (NIS/NIP): STF001\n- Email: staf@sma.id"
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Buku apa saja yang tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Pinjaman saya apa saja?",
+        "intent": "MY_LOANS",
+        "verified": true,
+        "ai": null,
+        "answer": "Saat ini kamu tidak memiliki peminjaman aktif."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Berapa denda saya?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Belum ada riwayat denda tercatat."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Siapa yang sedang meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Tampilkan riwayat peminjaman Najla",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, saya tidak dapat mengungkap informasi pribadi atau riwayat peminjaman pengguna lain. Jika kamu ingin melihat riwayat peminjamanmu sendiri, kamu bisa membukanya melalui menu Riwayat Peminjaman di DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Tugas staf apa?",
+        "intent": "MY_CAPABILITIES",
+        "verified": true,
+        "ai": null,
+        "answer": "Sebagai Staf di DigiLib, berikut tugas, hak, dan fitur yang tersedia untuk akun Anda:\n\n- Mencari dan melihat koleksi buku fisik dan ebook di Katalog DigiLib.\n- Meminjam buku fisik untuk keperluan kedinasan/staf sekolah (kuota hingga 5 buku, durasi 14 hari).\n- Melihat informasi peminjaman aktif dan riwayat transaksi pribadi.\n- Menggunakan DigiLib Assistant untuk informasi koleksi buku dan panduan umum perpustakaan."
+      }
+    ]
+  },
+  {
+    "role": "STAFF",
+    "turns": [
+      {
+        "q": "Model AI apa yang digunakan?",
+        "intent": "CHITCHAT",
+        "verified": true,
+        "ai": null,
+        "answer": "AI yang sedang digunakan: OpenRouter (openai/gpt-4o)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Ada berapa buku?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Ada 2 judul buku."
+      },
+      {
+        "q": "Kalau kategori sejarah?",
+        "intent": "STATS",
+        "verified": true,
+        "ai": null,
+        "answer": "Maaf, kategori **sejarah** tidak ditemukan di katalog buku DigiLib.\n\nKategori yang tersedia:\n\n- Buku Referensi\n- Buku Teks Pelajaran\n- Cerita Pendek\n- Ebook\n- Ensiklopedia\n- Fiksi\n- Modul\n- Nonfiksi\n- Novel\n- Pengetahuan Umum"
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Buku apa saja yang tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      },
+      {
+        "q": "Berapa jumlahnya?",
+        "intent": "CATALOG",
+        "verified": true,
+        "ai": null,
+        "answer": "Ada 2 judul buku."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Buku apa saja yang tersedia?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      },
+      {
+        "q": "Ada versi ebook?",
+        "intent": "EBOOK_CATALOG",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul ebook:\n\n- Fisika Dasar untuk SMA (Ebook) — Yohanes Surya (ebook)\n- Kumpulan Cerpen Singkat (Ebook) — Ratih Kumala (ebook)\n\nEbook dapat dibaca secara digital melalui web DigiLib."
+      },
+      {
+        "q": "Berapa jumlahnya?",
+        "intent": "EBOOK_CATALOG",
+        "verified": true,
+        "ai": null,
+        "answer": "Ada 2 judul ebook terdaftar di katalog DigiLib."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Ada berapa pengguna?",
+        "intent": "USER_COUNT",
+        "verified": true,
+        "ai": null,
+        "answer": "Jumlah pengguna terdaftar di DigiLib: **7** pengguna."
+      },
+      {
+        "q": "Sekarang buku apa saja?",
+        "intent": "BOOK_PHYSICAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Ditemukan 2 judul buku:\n\n- Bumi Manusia — Pramoedya Ananta Toer (tersedia 5)\n- Fisika Dasar untuk SMA — Yohanes Surya (tersedia 10)"
+      }
+    ]
+  },
+  {
+    "role": "STUDENT",
+    "turns": [
+      {
+        "q": "Apakah saya punya denda?",
+        "intent": "MY_FINES",
+        "verified": true,
+        "ai": null,
+        "answer": "Belum ada riwayat denda tercatat."
+      },
+      {
+        "q": "Kalau pinjaman saya?",
+        "intent": "MY_LOANS",
+        "verified": true,
+        "ai": null,
+        "answer": "Saat ini kamu tidak memiliki peminjaman aktif."
+      }
+    ]
+  },
+  {
+    "role": "LIBRARIAN",
+    "turns": [
+      {
+        "q": "Siapa yang sedang meminjam?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Tidak ada buku fisik yang sedang dipinjam (belum dikembalikan) saat ini (waktu Asia/Jakarta)."
+      },
+      {
+        "q": "Yang paling lama siapa?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Tidak ada buku fisik yang sedang dipinjam (belum dikembalikan) saat ini (waktu Asia/Jakarta)."
+      }
+    ]
+  },
+  {
+    "role": "ADMIN",
+    "turns": [
+      {
+        "q": "Berapa total denda?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Total denda yang tercatat: Rp166.000."
+      },
+      {
+        "q": "Kalau yang sudah dibayar?",
+        "intent": "OPERATIONAL",
+        "verified": true,
+        "ai": null,
+        "answer": "Total denda yang sudah dibayar: Rp166.000."
+      }
+    ]
+  }
+]

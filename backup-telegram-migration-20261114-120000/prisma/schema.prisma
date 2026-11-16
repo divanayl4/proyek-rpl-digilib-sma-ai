@@ -1,0 +1,267 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(uuid())
+  name           String
+  email          String    @unique
+  passwordHash   String
+  role           String    @default("STUDENT") // ADMIN, LIBRARIAN, STUDENT, TEACHER, STAFF
+  gender         String?   // MALE, FEMALE – dipakai AI Assistant untuk sapaan Pak/Bu
+  isActive       Boolean   @default(true)
+  identityNumber String?   // NIS for students, NIP/ID for staff/teachers
+  class          String?   // e.g. "XII IPA 1" for students
+  // Telegram (opsional). Hanya diisi setelah pengguna menautkan akun sendiri
+  // melalui kode sekali-pakai. chatId privat tidak pernah dikirim ke klien.
+  telegramChatId            String?
+  telegramLinkCode          String?   // kode sekali-pakai
+  telegramLinkCodeExpiresAt DateTime? // masa berlaku kode
+  telegramLinkedAt          DateTime? // saat akun berhasil ditautkan
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  borrows         BorrowRecord[]  @relation("UserBorrows")
+  createdBorrows  BorrowRecord[]  @relation("CreatedBorrows")
+  approvedBorrows BorrowRecord[]  @relation("ApprovedBorrows")
+  paidFines       BorrowRecord[]  @relation("PaidFines")
+  finePayments    FinePayment[]   @relation("RecordedFinePayments")
+  ebookLoans      EbookLoan[]     @relation("UserEbookLoans")
+  ebookReadingSessions EbookReadingSession[] @relation("UserEbookReadingSessions")
+  auditLogs       AuditLog[]
+  notifications   Notification[]
+
+  @@index([role])
+  @@index([isActive])
+  @@index([telegramLinkCode])
+}
+
+model Book {
+  id          String    @id @default(uuid())
+  title       String
+  author      String
+  isbn        String?
+  publisher   String?
+  year        Int?
+  stock       Int       @default(0)
+  coverUrl    String?
+  description String?
+  // Dimensi kurikulum SMK. Semua opsional agar katalog lama tetap valid dan
+  // agar nilai baru (kelas/mapel/jurusan) bisa ditambah tanpa mengubah kode.
+  grade       String?   // tingkat kelas: "X", "XI", "XII"
+  subject     String?   // mata pelajaran, mis. "Matematika", "Pemrograman Web"
+  major       String?   // jurusan / konsentrasi keahlian, mis. "RPL", "TKJ"
+  // PHYSICAL = physical copy managed through BorrowRecord.
+  // EBOOK    = digital copy read online through a time-limited EbookLoan.
+  //            filePath null berarti katalog/placeholder (berkas belum diunggah).
+  format      String    @default("PHYSICAL")
+  filePath    String?   // server-relative path to the ebook file, never exposed to the client
+  pageCount   Int?
+  // Arsip lunak (soft delete). Buku yang diarsipkan tidak muncul di katalog
+  // aktif, tetapi tetap tersimpan agar riwayat peminjaman/denda tidak yatim.
+  archivedAt  DateTime?
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime  @default(now())
+
+  borrows     BorrowRecord[]
+  ebookLoans  EbookLoan[]
+  ebookReadingSessions EbookReadingSession[]
+
+  @@index([categoryId])
+  @@index([title])
+  @@index([format])
+  @@index([grade])
+  @@index([subject])
+  @@index([major])
+  @@index([archivedAt])
+}
+
+model Category {
+  id    String @id @default(uuid())
+  name  String @unique
+  books Book[]
+}
+
+model BorrowRecord {
+  id           String    @id @default(uuid())
+  userId       String
+  user         User      @relation("UserBorrows", fields: [userId], references: [id])
+  bookId       String
+  book         Book      @relation(fields: [bookId], references: [id])
+  borrowDate   DateTime  @default(now()) // tanggal pinjam resmi (diisi saat disetujui)
+  dueDate      DateTime
+  returnDate   DateTime?
+  // REQUESTED (pengajuan online), BORROWED, RETURNED, OVERDUE, CANCELLED, REJECTED
+  status       String    @default("BORROWED")
+  createdById  String?
+  createdBy    User?     @relation("CreatedBorrows", fields: [createdById], references: [id])
+  // Alur persetujuan pengajuan peminjaman oleh Pustakawan/Admin
+  requestedAt  DateTime?
+  approvedAt   DateTime?
+  approvedById String?
+  approvedBy   User?     @relation("ApprovedBorrows", fields: [approvedById], references: [id])
+  rejectReason String?
+  notes        String?
+  // Alasan peminjaman yang ditulis sendiri oleh peminjam (Siswa/Guru) saat
+  // mengajukan. Nullable agar transaksi lama tetap valid tanpa alasan.
+  borrowReason String?
+
+  // Denda di-*snapshot* saat pengembalian dikonfirmasi sehingga perubahan tarif
+  // tidak mengubah denda lama. `fineAmount` adalah TOTAL denda (keterlambatan +
+  // kerusakan) agar daftar/pembayaran cukup memakai satu nilai; rinciannya
+  // disimpan terpisah untuk transparansi. `fineRate` menyimpan tarif harian yang
+  // dipakai, `damageFineRate` menyimpan tarif kategori kerusakan yang dipakai.
+  fineAmount       Int       @default(0)
+  fineRate         Int?
+  lateFineAmount   Int       @default(0) // bagian denda keterlambatan
+  damageFineAmount Int       @default(0) // bagian denda kerusakan
+  damageFineRate   Int?      // tarif kategori kerusakan yang dibekukan
+  returnCondition  String?   // kode kategori kondisi saat dikembalikan (mis. DIRTY)
+  finePaid     Boolean   @default(false)
+  finePaidAt   DateTime?
+  finePaidById String?
+  finePaidBy   User?     @relation("PaidFines", fields: [finePaidById], references: [id])
+  finePayments FinePayment[]
+
+  @@index([userId])
+  @@index([bookId])
+  @@index([status])
+  @@index([dueDate])
+  @@index([userId, status])
+  @@index([bookId, status])
+  @@index([finePaid])
+}
+
+model FinePayment {
+  id           String       @id @default(uuid())
+  borrowId     String
+  borrow       BorrowRecord @relation(fields: [borrowId], references: [id])
+  amount       Int
+  method       String? // CASH, TRANSFER, dll.
+  note         String?
+  recordedById String?
+  recordedBy   User?        @relation("RecordedFinePayments", fields: [recordedById], references: [id])
+  createdAt    DateTime     @default(now())
+
+  @@index([borrowId])
+  @@index([createdAt])
+}
+
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model EbookLoan {
+  id         String    @id @default(uuid())
+  userId     String
+  user       User      @relation("UserEbookLoans", fields: [userId], references: [id])
+  bookId     String
+  book       Book      @relation(fields: [bookId], references: [id])
+  borrowedAt DateTime  @default(now())
+  expiresAt  DateTime
+  returnedAt DateTime?
+  // ACTIVE while expiresAt is in the future, EXPIRED once the 5-day window is over,
+  // RETURNED when the user finishes early. The EXPIRED transition is enforced by the
+  // server on every read, not only by this column.
+  status     String    @default("ACTIVE")
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  readingSessions EbookReadingSession[]
+
+  @@index([userId])
+  @@index([bookId])
+  @@index([status])
+  @@index([expiresAt])
+  @@index([userId, status])
+  @@index([bookId, status])
+}
+
+// Aktivitas membaca ebook yang benar-benar tercatat dari reader.
+//
+// Satu baris adalah SATU SESI, bukan satu peminjaman. Sesi dapat dibuat tanpa
+// loan (jalur operator Admin/Pustakawan) dan tetap tersimpan setelah masa
+// pinjam berakhir. `openKey` hanya diisi selama sesi masih terbuka sehingga
+// refresh/permintaan bersamaan tidak membuat sesi ganda; saat sesi ditutup
+// atau melewati batas idle, key dikosongkan (SQLite mengizinkan banyak NULL
+// pada kolom unik).
+model EbookReadingSession {
+  id              String    @id @default(uuid())
+  userId          String
+  user            User      @relation("UserEbookReadingSessions", fields: [userId], references: [id])
+  bookId          String
+  book            Book      @relation(fields: [bookId], references: [id])
+  loanId          String?
+  loan            EbookLoan? @relation(fields: [loanId], references: [id])
+  openKey         String?   @unique
+  firstOpenedAt   DateTime  @default(now())
+  lastActivityAt  DateTime  @default(now())
+  endedAt         DateTime?
+  // Hanya diisi bila viewer benar-benar melaporkan halaman yang valid.
+  // Native browser PDF viewer saat ini tidak mengekspos halaman aktif, jadi
+  // pembaca normal tidak mengirim nilai ini.
+  lastPage        Int?
+  progressPercent Float?
+  // Jumlah sinyal aktivitas yang tercatat (open pertama = 1). Dipakai untuk
+  // membedakan OPENED (hanya dibuka) dari ACTIVE (ada aktivitas lanjutan).
+  activityCount   Int       @default(1)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([userId, lastActivityAt])
+  @@index([bookId, lastActivityAt])
+  @@index([lastActivityAt])
+  @@index([loanId])
+  @@index([endedAt])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  details   String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  message   String
+  type      String   @default("INFO") // INFO, SUCCESS, WARNING, ERROR
+  isRead    Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([userId, isRead])
+  @@index([createdAt])
+}
+
+// Pencatatan pengiriman Telegram untuk mencegah pesan ganda per peristiwa.
+// `eventKey` deterministik (mis. "borrow:approve:<borrowId>"); kunci unik
+// membuat dua permintaan bersamaan tidak dapat mengirim pesan yang sama.
+model TelegramDelivery {
+  id        String   @id @default(uuid())
+  eventKey  String   @unique
+  userId    String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
