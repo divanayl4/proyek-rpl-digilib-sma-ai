@@ -39,6 +39,7 @@
     "node-mocks-http": "^1.18.1",
     "prisma": "^5.10.2",
     "ts-jest": "^29.4.12",
+    "ts-node": "^10.9.2",
     "tsx": "^4.7.1",
     "typescript": "^5"
   },
