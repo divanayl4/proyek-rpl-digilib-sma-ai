@@ -347,15 +347,23 @@ describe("resolveEbookFilePath", () => {
 
   it("rejects parent-directory traversal", () => {
     expect(() => resolveEbookFilePath("../../.env")).toThrow("INVALID_FILE_PATH");
-    expect(() => resolveEbookFilePath("..\\..\\.env")).toThrow("INVALID_FILE_PATH");
     expect(() => resolveEbookFilePath("nested/../../../secrets.txt")).toThrow(
       "INVALID_FILE_PATH"
     );
+    // Backslash is a path separator only on Windows. On POSIX it is a literal
+    // filename character, so a value such as "..\\..\\.env" stays inside the
+    // storage root and cannot traverse to a parent directory.
+    if (process.platform === "win32") {
+      expect(() => resolveEbookFilePath("..\\..\\.env")).toThrow("INVALID_FILE_PATH");
+    }
   });
 
   it("rejects absolute paths", () => {
     expect(() => resolveEbookFilePath("/etc/passwd")).toThrow("INVALID_FILE_PATH");
-    expect(() => resolveEbookFilePath("C:\\Windows\\win.ini")).toThrow("INVALID_FILE_PATH");
+    // A Windows drive path is absolute only when resolved on Windows.
+    if (process.platform === "win32") {
+      expect(() => resolveEbookFilePath("C:\\Windows\\win.ini")).toThrow("INVALID_FILE_PATH");
+    }
   });
 
   it("rejects empty and null-ish paths", () => {
