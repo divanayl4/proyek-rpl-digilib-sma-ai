@@ -15,9 +15,7 @@ Sistem perpustakaan digital modern untuk Sekolah Menengah Atas, sebagai ekosiste
 
 ## 🎥 Dokumentasi Video Proyek
 
-- **Video Progres 1**:
-- **Video Progres 2**:
-- **Video Final Demo**:
+- **Video Final**: https://youtu.be/Hp13zL2b070?si=OhIlYbbMvPl9NlbD
 
 ---
 
